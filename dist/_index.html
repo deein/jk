@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Florian Pernot">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Florian Pernot - Deein</title>
+    <style>
+    /* SLIDESHOW */
+    nav.slideshowNav{
+        position:fixed;
+        z-index:1000;   
+        right:0;
+        width:40px;
+        height:120px;
+        top:40%;
+        margin-top:-60px;
+        display:none;
+    }
+    nav.slideshowNav2{
+        position:fixed;
+        z-index:1000;   
+        right:0;
+        width:40px;
+        height:120px;
+        top:60%;
+        margin-top:-60px;
+        display:none;
+    }
+    nav.slideshowNav .prev, nav.slideshowNav2 .prev {
+        margin-top:1px;
+        margin-bottom:1px;
+    }
+    nav.slideshowNav .prev, nav.slideshowNav .next, nav.slideshowNav .pause, nav.slideshowNav2 .prev, nav.slideshowNav2 .next, nav.slideshowNav2 .pause{   
+        position: relative;
+        float:left;
+        width: 40px;
+        height: 40px;
+        background: rgba(0,255,43,1);
+        line-height: 40px;
+        text-align: center;
+        cursor:pointer;
+    }
+
+    nav.slideshowNav .prev, nav.slideshowNav .next, nav.slideshowNav .pause{
+        background: rgba(255,0,43,1);
+        -webkit-transition: background-color .8s ease;
+        -moz-transition: background-color .8s ease;
+        -o-transition: background-color .8s ease;
+        transition: background-color .8s ease;
+    }
+
+    nav.slideshowNav .prev:hover, nav.slideshowNav .next:hover, nav.slideshowNav .pause:hover, nav.slideshowNav2 .prev:hover, nav.slideshowNav2 .next:hover, nav.slideshowNav2 .pause:hover{
+        background: rgba(0,5,13,1);
+    }
+    </style>
+</head>
+<body>
+<button>Click to reverse</button>
+<nav class="slideshowNav">
+    <div id="nextSlide" class="next">1</div>
+    <div id="prevSlide" class="prev">2</div>
+    <div id="pauseSlide" class="pause">3</div>
+</nav>
+
+<nav class="slideshowNav2">
+    <div id="nextSlide2" class="next">1</div>
+    <div id="prevSlide2" class="prev">2</div>
+    <div id="pauseSlide2" class="pause">3</div>
+</nav>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.velocity.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/jquery.velocity-ui.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("nav.slideshowNav, nav.slideshowNav div, nav.slideshowNav2, nav.slideshowNav2 div").hide().velocity(
+            "transition.slideRightBigIn",
+            {
+                duration: 500,
+                stagger: 200,
+                display: 'block'
+            }
+        );
+        $('button').click(function(e){
+            e.preventDefault();
+            $("nav.slideshowNav, nav.slideshowNav div, nav.slideshowNav2, nav.slideshowNav2 div").velocity(
+                "transition.slideRightBigOut",
+                {
+                    duration: 500,
+                    stagger: 200,
+                    backwards: true
+                }
+            );
+        })
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* Transition */
+@mixin transition($property, $delay, $smooth){
+	@include transition-property($property);
+	@include transition-duration($delay);
+	@include transition-timing-function($smooth);
+}
+/* Slideshow */
+@mixin iconSlideshowNav(){	
+	position: relative;
+	float:left;
+	width: 40px;
+	height: 40px;
+	background: $redJK;
+	line-height: 40px;
+	text-align: center;
+	cursor:pointer;
+}
+
+@mixin iconSlideshowNavImg(){		
+	width: 18px;
+	height: 18px;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+/* Menu */
+@mixin iconMenu(){		
+	width:auto !important;
+	height:60px !important;
+	line-height:60px !important;
+	margin: 0;
+}
+
+@mixin iconMenuImg(){		
+	position:absolute;
+	width:20px;
+	height:20px;
+	line-height:60px;
+	vertical-align:middle;
+	left:50%;
+	margin-left:-10px !important;
+	top:-7px;
+}
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 

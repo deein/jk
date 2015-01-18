@@ -1,0 +1,24 @@
+/* CONTENT */
+section#wrapper {
+	width: 100%;
+	height: 100%;
+}
+section#content-wrapper {
+	width: 100%;
+}
+section#content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+}
+div.container{
+	position: relative;
+	margin: 0 auto;
+	margin-top:750px;
+	width:50%;
+	height:auto;
+	overflow: hidden;
+	display:none;
+}

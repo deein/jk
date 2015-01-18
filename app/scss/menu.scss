@@ -1,0 +1,68 @@
+@import "compass";
+@import "colors";
+@import "mixin";
+
+/* MENU */
+header{
+	position: relative;
+	width: 100%;
+	height: 15%;
+	background: white;
+	overflow: hidden;
+}
+nav.menu {
+	position: relative;
+	top:50%;
+	margin: 0 auto;
+	margin-top: -40px;
+	// background: $blackJK;
+	width: 1200px;;
+	height: 80px;
+	display: block;
+	z-index:900;
+	ul{
+		width: auto;
+		height: 100%;
+		li{
+			position: relative;
+			display: block;
+			float:left;
+			height: 100%;
+			a{	
+				display: block;
+				width: auto;
+				height:100%;
+				line-height:80px;
+				padding:0 20px;
+				color:$blackJK;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: 12px;
+				font-weight: 400;
+				letter-spacing: 4px;
+				@include transition(all, .5s, ease);
+				&:hover{
+					color:$redJK;
+					@include transition(all, .5s, ease);
+				}	
+			}
+		}
+	}
+	.logoJK {
+		float: left;
+		width: 80px;
+		height:100%;
+		opacity:0;
+		text-align: left;
+		img {
+			width: 100%;
+			height: 100%;
+			vertical-align: middle;
+			display: block;
+		}
+	}
+}
+.svg-50{
+	width: 50%;
+	height: 50%;
+}
