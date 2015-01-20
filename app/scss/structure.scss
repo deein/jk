@@ -16,7 +16,7 @@ html,body{height: 100%;}
 }
 
 body {
-	background: darken($blackJK, 10%);
+	background: $redJK;
 	color: $blackJK;
 	font-family: 'Raleway';
 	// background: url('../images/bgBody.jpg') center top;
@@ -78,7 +78,7 @@ div.progressbar {
 footer{
 	display:block;
 	height:500px;
-	background: darken($blackJK, 10%);
+	background: $redJK;
 	color:white;
 	p{
 		opacity:0;
