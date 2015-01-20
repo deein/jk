@@ -76,9 +76,13 @@ div.progressbar {
 }
 // Footer
 footer{
-	display:none;
+	display:block;
 	height:500px;
 	background: darken($blackJK, 10%);
+	color:white;
+	p{
+		opacity:0;
+	}
 }
 // PAGE PRODUCTIONS
 .project{

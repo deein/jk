@@ -7,11 +7,7 @@
 ?>
 <?php include('template/header.php'); ?>
 <?php include('template/menu.php'); ?>
-<section class="container-fluid">
-  <section class="row">
-    <?php
-      echo $framework -> render();
-    ?>
-  </section>
-</section>
+<?php
+  echo $framework -> render();
+?>
 <?php include('template/footer.php'); ?>

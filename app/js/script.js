@@ -40,7 +40,7 @@ $(document).ready(function() {
 		$(".sliderImage.current, .sliderImage.current *").velocity(
 			"transition.fadeOut",
 			{
-				duration: 800,
+				duration: 300,
 				stagger: 200,
 				backwards: true,
 				complete: function() { 
@@ -173,20 +173,27 @@ $(window).load(function() {
 var alerted = false; 
 
 $(window).scroll(function(){
-	// var aTop = $('.slider').offset().top-100;
 
-	// if($('.slider').height() < $(window).height()){
-	// 	if($(this).scrollTop()>=aTop && !alerted){
-	// 	    alerted = true;
-	// 	    $("section.menu").velocity({ top: ['0', '50px'] },{ duration: 250, easing: "ease"});
-	// 	    console.log('header just passed.');
-	// 	} 
-	// 	else if($(this).scrollTop()<=aTop && alerted){
-	// 	    alerted = false;
-	// 	    $("section.menu").velocity({ top: ['50px', '0'] },{ duration: 150, easing: "ease"});
-	// 	    console.log('2header just passed.');
-	// 	}
-	// }
+	var aTop = $('#slider').offset().top;
+
+	if($('#slider').height() < $(window).height()){
+		if($(this).scrollTop()>=aTop && !alerted){
+		    alerted = true;
+			$("footer *").velocity(
+				"transition.slideUpIn",
+				{
+					duration: 800,
+					stagger: 200
+				}
+			);
+		    console.log('header just passed.');
+		} 
+		// else if($(this).scrollTop()<=aTop && alerted){
+		//     alerted = false;
+		//     $("nav.menu").velocity({ top: ['50px', '0'] },{ duration: 150, easing: "ease"});
+		//     console.log('2header just passed.');
+		// }
+	}
 });
 
 $.Velocity.Sequences.fadeUpIn = function(element, options){
