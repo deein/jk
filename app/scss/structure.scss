@@ -1,12 +1,13 @@
 @import "compass";
 @import "compass/reset";
 @import "colors";
-@import "template";
+// @import "template";
 @import "preloader";
 @import "slider";
 @import "player";
 @import "menu";
 @import "mixin";
+@import "pages";
 
 html,body{height: 100%;}
 
@@ -15,10 +16,11 @@ html,body{height: 100%;}
 }
 
 body {
-	background: white;
-	color: $darkgrey;
+	background: darken($blackJK, 10%);
+	color: $blackJK;
 	font-family: 'Raleway';
 	// background: url('../images/bgBody.jpg') center top;
+	font-size:100%;
 }
 /* SOCIAL */
 nav.social {
@@ -72,73 +74,126 @@ div.progressbar {
 	display:block;
 	opacity:0;
 }
-/*.timer > .percent {
-	position: absolute;
-	top: 1.05em;
-	left: 0;
-	width: 3.33em;
-	font-size: 0.3em;
-	text-align: center;
+// Footer
+footer{
+	display:none;
+	height:500px;
+	background: darken($blackJK, 10%);
 }
-.timer > #slice {	
-	position: absolute;
-	width: 496px;
-	height: 496px;
-	clip: rect(0px,500px,500px,250px);
-}
-.timer > #slice.gt50 {
-	clip: rect(auto, 500px, 500px, auto);
-}
-.timer > #slice > .pie {
-	clip: rect(0px,250px,500px,0px);
-	border: 2px solid rgba(255,0,48,1);
-	position: absolute;
-	width: 496px;
-	height: 496px;
-	-moz-border-radius: 1000px;
-	-webkit-border-radius: 1000px;
-	border-radius: 1000px;
-	z-index:100;
-}
-.timer > #slice > .pie.fill {
-	-moz-transform: rotate(180deg) !important;
-	-webkit-transform: rotate(180deg) !important;
-	-o-transform: rotate(180deg) !important;
-	transform: rotate(180deg) !important;
-}
-.timer.fill > .percent {
-	display: none;
-}
-.timer.fill > #slice > .pie {
-	border: transparent;
-	background-color: #c0c0c0;
-	width: 496px;
-	height: 496px;
-}*/
-/* PAGE PRODUCTIONS */
-div.contentFeed {
-	position: reltive;
-	margin:0 auto;
-	margin-top:40px;
-	top: 0;
-	left: 0;
-	width: 1000px;
-	height: 100%;
-	overflow:hidden;
-	background:#d6d6d6;
-}
+// PAGE PRODUCTIONS
 .project{
 	padding:0;
 	line-height:100%;
 	overflow:hidden;
-	@include transition(transform, .8s, ease);
+	opacity:0;
+	height: 300px;
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-size:100%;
+	@include transition(background, .3s, ease);
+	// @include transition(height, .3s, ease);	
 	img{
 		vertical-align:middle;
+		@include transition(transform, .8s, ease);
 	}
 	&:hover img{
 		cursor:pointer;
 		background: rgba($blackJK, .8);
-		@include scale(1.2);
+		@include scale(1.05);
 		@include transition(transform, .8s, ease);
+	}
+	a{
+		display:block;
+		width: 100%;
+		height: 100%;
+	}
+	.overlay{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: rgba($blackJK, .8);
+		opacity:0;
+		@include transition(all, .8s, ease);
+		z-index:1;
+		text-align: center;
+		.title{
+			position: absolute;
+			width:100%;
+			height:100px;
+			top:50%;
+			margin-top: -50px;
+			h2, h4{
+				line-height:50px;
+				color:white;
+				text-transform: uppercase;
+				opacity: 0;
+				@include translateY(100%);
+				@include transition(all, .3s, ease);	
+			}			
+			h2{
+				font-size: 2em;
+				font-weight: bold;
+			}
+			h4{
+				font-size: 1.3em;
+				font-weight:normal;
+			}
+			&:before{
+				content:'';
+				width:100px;
+				height: 1px;
+				border-top:1px solid $redJK;
+				position:absolute;
+				top: -30px;
+				left: 50%;
+				margin-left: -50px;
+				// @include skewY(15deg);
+				@include translateY(100%);
+				@include transition(all, .3s, ease);	
+			}
+			&:after{
+				content:'';
+				width:100px;
+				height: 1px;
+				border-top:1px solid $redJK;
+				position:absolute;	
+				bottom: -36px;
+				left: 50%;
+				margin-left: -50px;
+				// @include skewY(15deg);
+				@include translateY(100%);
+				@include transition(all, .3s, ease);	
+			}
+		}		
+		
+	}
+	&:hover {		
+		// height: 400px;
+		@include transition(background, .8s, ease);			
+		background-size:105%;
+	}	
+	&:hover .overlay{
+		opacity:1;
+		@include transition(all, .8s, ease);		
+		h2, h4{
+			opacity: 1;
+			@include translateY(0);
+			@include transition(all, .8s, ease);
+		}		
+		h2{
+			@include transition-delay(.1s);
+		}
+		.title{
+			&:before{
+				top: -10px;
+				@include translateY(0);
+				@include transition(all, .8s, ease);	
+			}
+			&:after{				
+				bottom: -16px;
+				@include translateY(0);
+				@include transition(all, .8s, ease);	
+			}
+		}
 	}
 }

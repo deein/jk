@@ -1,23 +1,17 @@
-<?php include('header.php'); ?>
-<?php include('menu.php'); ?>
+<?php
+  include('inc/config.php');
+  include('inc/framework.php');
+  $framework -> default_page(WB_DEFAULT_PAGE);
+  $framework -> current_page($_GET['do']);
+  $_SERVER['REDIRECT_STATUS'] = 404;
+?>
+<?php include('template/header.php'); ?>
+<?php include('template/menu.php'); ?>
 <section class="container-fluid">
   <section class="row">
     <?php
-          //Dynamic Loading
-    $d = "pages/";
-
-    if(isset($_GET['do'])){
-      $p  = strtolower($_GET['do']);
-      if(preg_match("/[a-z0-9\-]+$/",$p) && file_exists($d.$p.".php")){
-        include $d.$p.".php"; 
-      }else{
-        include $d."404.php"; 
-      }
-    }
-    if($_SERVER['REQUEST_URI'] == '/'){
-      include $d."productions.php";  
-    }
+      echo $framework -> render();
     ?>
   </section>
 </section>
-<?php include('footer.php'); ?>
+<?php include('template/footer.php'); ?>

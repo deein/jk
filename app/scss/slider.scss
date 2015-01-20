@@ -2,12 +2,12 @@
 @import "mixin";
 /* SLIDER */
 #slider {
-    top: 15%;
+    top: 10%;
 	left: 0;
     display: inline;
     position: absolute !important;
     width: 100%;
-    height: 85%;
+    height: 90%;
     overflow: hidden;
 	@include transform(center top);
 	.sliderContainer
@@ -149,14 +149,6 @@
 			float:right;
 		}
 	}
-}
-
-footer{
-	display:none;
-	background: $blackJK;
-	padding:40px !important;
-	margin-bottom:50px;
-	font-size: 12px;
 }
 
 /* SLIDESHOW */

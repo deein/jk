@@ -74,6 +74,36 @@ $(document).ready(function() {
 		stop_slideshow(slide);
 		repeat_slideshow(slide);
 	}
+
+	// SVG convert
+	$('img.svg').each(function(){
+		var $img = jQuery(this);
+		var imgID = $img.attr('id');
+		var imgClass = $img.attr('class');
+		var imgURL = $img.attr('src');
+
+		jQuery.get(imgURL, function(data) {
+	        // Get the SVG tag, ignore the rest
+	        var $svg = jQuery(data).find('svg');
+
+	        // Add replaced image's ID to the new SVG
+	        if(typeof imgID !== 'undefined') {
+	        	$svg = $svg.attr('id', imgID);
+	        }
+	        // Add replaced image's classes to the new SVG
+	        if(typeof imgClass !== 'undefined') {
+	        	$svg = $svg.attr('class', imgClass+' replaced-svg');
+	        }
+
+	        // Remove any invalid XML tags as per http://validator.w3.org
+	        $svg = $svg.removeAttr('xmlns:a');
+
+	        // Replace image with new SVG
+	        $img.replaceWith($svg);
+
+	    }, 'xml');
+	});
+
 });
 $(window).load(function() {
 	$("header, header .logoJK, header li").velocity(
@@ -83,6 +113,59 @@ $(window).load(function() {
 			stagger: 200
 		}
 	);
+
+	$(".project").velocity(
+		"transition.slideUpIn",
+		{
+			duration: 800,
+			stagger: 200
+		}
+	);
+
+	$(".highlight, .highlight h2, .highlight h4, .content .col-sm-12, .content h4, .content img, .content p").velocity(
+		"transition.slideUpIn",
+		{
+			duration: 800,
+			stagger: 200
+		}
+	);
+
+	$(".project").each(function(i){
+		var background = $(this).attr("data-background");
+		$(this).css('background-image', 'url(' + background + ')');
+		console.log(i + ' ' + background);
+	});
+
+	$(".highlight").each(function(i){
+		var background = $(this).attr("data-background");
+		$(this).css('background-image', 'url(' + background + ')');
+		console.log(i + ' ' + background);
+	});
+
+	// $(".project").mouseenter(function(){
+	// 	$(this).velocity(
+	// 		{
+	// 			scale: [1.1, 1]
+	// 		},
+	// 		{
+	// 			duration: 800,
+	// 			stagger: 200
+	// 		}
+	// 	)
+	// });
+
+	// $(".project").mouseleave(function(){
+	// 	$(this).velocity(
+	// 		{
+	// 			scale: [1, 1.1]
+	// 		},
+	// 		{
+	// 			duration: 800,
+	// 			stagger: 200
+	// 		}
+	// 	)
+	// });
+
 });
 
 
@@ -343,33 +426,3 @@ function animMenuOut(){
 // 		$('#content').fadeIn(200);
 // 	});
 // }
-
-// SVG convert
-$('img.svg').each(function(){
-	var $img = jQuery(this);
-	var imgID = $img.attr('id');
-	var imgClass = $img.attr('class');
-	var imgURL = $img.attr('src');
-
-	jQuery.get(imgURL, function(data) {
-        // Get the SVG tag, ignore the rest
-        var $svg = jQuery(data).find('svg');
-
-        // Add replaced image's ID to the new SVG
-        if(typeof imgID !== 'undefined') {
-        	$svg = $svg.attr('id', imgID);
-        }
-        // Add replaced image's classes to the new SVG
-        if(typeof imgClass !== 'undefined') {
-        	$svg = $svg.attr('class', imgClass+' replaced-svg');
-        }
-
-        // Remove any invalid XML tags as per http://validator.w3.org
-        $svg = $svg.removeAttr('xmlns:a');
-
-        // Replace image with new SVG
-        $img.replaceWith($svg);
-
-    }, 'xml');
-
-});

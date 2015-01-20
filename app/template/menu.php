@@ -1,7 +1,7 @@
 <!-- Menu -->
-<header>
-  <nav class="menu">
-    <div class="logoJK"><img class="svg-yellow svg-50" src="images/logoJK.svg" /></div>
+<header class="container-fluid">
+  <nav class="container menu">
+    <div class="logoJK"><a href="/"><img class="svg svg-yellow" src="images/logoJK.svg" /></a></div>
     <ul class="pull-right">
       <li><a class="productions" href="productions">Productions</a></li>
       <li><a class="productions" href="productions">Services</a></li>

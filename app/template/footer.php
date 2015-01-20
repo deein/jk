@@ -1,3 +1,9 @@
+<footer class="container-fluid">
+	<div class="col-lg-7">
+		<p>&copy; 2013 - <?php date_default_timezone_set('Europe/Paris'); echo date('Y'); ?> JK Groupe. All rights reserved.</p>
+	</div>
+	<div class="col-lg-5"></div>
+</footer>	
 <!-- build:js js/app.min.js -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- 

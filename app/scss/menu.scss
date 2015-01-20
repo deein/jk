@@ -6,17 +6,17 @@
 header{
 	position: relative;
 	width: 100%;
-	height: 15%;
-	background: white;
+	height: 10%;
+	bottom:0;
+	background: $blackJK;
 	overflow: hidden;
+	opacity:0;
 }
 nav.menu {
 	position: relative;
 	top:50%;
-	margin: 0 auto;
 	margin-top: -40px;
 	// background: $blackJK;
-	width: 1200px;;
 	height: 80px;
 	display: block;
 	z-index:900;
@@ -28,19 +28,22 @@ nav.menu {
 			display: block;
 			float:left;
 			height: 100%;
+			opacity:0;
 			a{	
 				display: block;
 				width: auto;
 				height:100%;
 				line-height:80px;
 				padding:0 20px;
-				color:$blackJK;
+				color: white;
 				text-decoration: none;
 				text-transform: uppercase;
-				font-size: 12px;
+				font-size: 11px;
 				font-weight: 400;
-				letter-spacing: 4px;
+				letter-spacing: 2px;
+				vertical-align: bottom;
 				@include transition(all, .5s, ease);
+				// @include skewY(-3deg);
 				&:hover{
 					color:$redJK;
 					@include transition(all, .5s, ease);
@@ -65,4 +68,10 @@ nav.menu {
 .svg-50{
 	width: 50%;
 	height: 50%;
+}
+.svg-yellow{
+	fill: $redJK;
+}
+.svg-black{
+	fill: $blackJK !important;
 }
