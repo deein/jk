@@ -11,4 +11,18 @@ $blackJK: #171c24;
 }
 .svg-black{
 	fill: $blackJK;
+	cursor:pointer;
+	@include transition(fill, .3s, all);
+	&:hover{
+		fill: #ffffff;
+		@include transition(fill, .3s, all);
+		path{
+			fill: #ffffff;
+			@include transition(fill, .3s, all);
+		}
+		polygon{
+			fill: #ffffff;
+			@include transition(fill, .3s, all);
+		}
+	}
 }

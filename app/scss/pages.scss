@@ -20,14 +20,15 @@
 	.overlay{
 		z-index:1;
 		.title{
-			position: absolute;
-			top:50%;
-			margin-top: -50px;
-			height: 140px;
+			// position: absolute;
+			// top:50%;
+			// margin-top: -50px;
+			// height: 140px;
 			// background: $redJK;
 			// padding:20px 30px;
 			color:$blackJK;
 			min-width:200px;
+			left:0;
 			// @include text-shadow(0 0 3px $blackJK);
 			h2{
 				font-size: 3.2em;
@@ -39,6 +40,21 @@
 				line-height:50px;
 				vertical-align: bottom;
 				opacity:0;
+			}
+		}
+	}
+	ul.socialfeed{
+		float:right;
+		width: 70%;
+		margin:20px 0;
+		margin-right:-10px;
+		li{
+			opacity:0;
+			float:left;
+			width:20%;
+			height:40px;
+			svg{
+				width:100%;
 			}
 		}
 	}

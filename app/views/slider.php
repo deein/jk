@@ -2,7 +2,7 @@
 <section id="slider">
 	<figure class="sliderContainer">
 		<picture class="sliderImage current">
-			<a href="#fifa">
+			<a href="all-star-games">
 				<img src="images/portfolio/fifa15.jpg" title="Fifa 14 Le Guide Ultime Team - Electronic Arts" />
 				<div class="title">
 					<h4>Electronic Arts</h4>

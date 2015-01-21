@@ -1,14 +1,21 @@
 <footer class="container-fluid">
 	<section class="container vertical-center">
-		<div class="col-sm-2">				
+		<div class="col-sm-4">				
 			<div class="logoJK"><a href="/"><img class="svg svg-black" src="images/logoJK.svg" /></a></div>
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-4">
 			<h4>Let's talk</h4>
 			<h2>Together</h2>
 		</div>
-		<div class="col-sm-2">
-			<p>&copy; <?php date_default_timezone_set('Europe/Paris'); echo date('Y'); ?> JK Groupe. All rights reserved.</p>
+		<div class="col-sm-4">
+			<ul class="col-lg-12 socialfeed">
+				<li><img class="col-lg-3 svg svg-black" src="images/facebook.svg" /></li>
+				<li><img class="col-lg-3 svg svg-black" src="images/twitter.svg" /></li>
+				<li><img class="col-lg-3 svg svg-black" src="images/youtube.svg" /></li>
+				<li><img class="col-lg-3 svg svg-black" src="images/instagram.svg" /></li>
+				<li><img class="col-lg-3 svg svg-black" src="images/vimeo.svg" /></li>
+			</ul>
+			<p class="col-lg-12">&copy; <?php date_default_timezone_set('Europe/Paris'); echo date('Y'); ?> JK Groupe. All rights reserved.</p>
 		</div>
 	</section>
 </footer>	

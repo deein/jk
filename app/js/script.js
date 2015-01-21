@@ -106,7 +106,7 @@ $(document).ready(function() {
 
 });
 $(window).load(function() {
-	$("header, header .logoJK, header li, footer, footer .logoJK, footer h2, footer h4, footer p").velocity(
+	$("header, header .logoJK, header li").velocity(
 		"transition.slideUpIn",
 		{
 			duration: 800,
@@ -122,7 +122,7 @@ $(window).load(function() {
 		}
 	);
 
-	$(".highlight, .highlight h2, .highlight h4, .content .col-sm-12, .content h4, .content img, .content p").velocity(
+	$(".highlight, .highlight h2, .highlight h4, .highlight li, .content .col-sm-12, .content h4, .content img, .content p, footer .logoJK, footer h2, footer h4, footer p, footer li").velocity(
 		"transition.slideUpIn",
 		{
 			duration: 800,

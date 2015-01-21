@@ -81,8 +81,20 @@ footer{
 	background: $redJK;
 	color:white;
 	height:300px;
-	p{
-		opacity:0;
+	ul.socialfeed{
+		float:right;
+		width: 70%;
+		margin:20px 0;
+		margin-right:-10px;
+		li{
+			opacity:0;
+			float:left;
+			width:20%;
+			height:40px;
+			svg{
+				width:100%;
+			}
+		}
 	}
 	.logoJK{		
 		width: 100px;
@@ -108,6 +120,15 @@ footer{
 		font-size: 1.6em;
 		font-weight: 600;
 		color:$blackJK;
+	}
+	p{
+		opacity:0;
+		color:$blackJK;
+		font-size: .6em;
+		font-weight: 800;
+		text-transform: uppercase;
+		text-align:right;
+		line-height:20px;
 	}
 }
 .vertical-center{
