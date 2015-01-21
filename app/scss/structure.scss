@@ -16,7 +16,7 @@ html,body{height: 100%;}
 }
 
 body {
-	background: $redJK;
+	background: darken($blackJK, 20%);
 	color: $blackJK;
 	font-family: 'Raleway';
 	// background: url('../images/bgBody.jpg') center top;
@@ -76,13 +76,46 @@ div.progressbar {
 }
 // Footer
 footer{
+	padding:50px 0;
 	display:block;
-	height:500px;
 	background: $redJK;
 	color:white;
+	height:300px;
 	p{
 		opacity:0;
 	}
+	.logoJK{		
+		width: 100px;
+		height: 100px;
+		line-height:200px;
+	}
+	img{
+	}
+	a{
+		display:block;
+		width:100%;
+		height:100%;
+	}
+	h2,h4{
+		text-transform: uppercase;
+		text-align: center;
+	}
+	h2{
+		font-size: 3em;
+		font-weight: 100;
+	}
+	h4{
+		font-size: 1.6em;
+		font-weight: 600;
+		color:$blackJK;
+	}
+}
+.vertical-center{
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	height: 100%;
 }
 // PAGE PRODUCTIONS
 .project{

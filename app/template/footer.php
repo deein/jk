@@ -1,28 +1,21 @@
 <footer class="container-fluid">
-	<section class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<p>&copy; 2013 - <?php date_default_timezone_set('Europe/Paris'); echo date('Y'); ?> JK Groupe. All rights reserved.</p>
-			</div>
+	<section class="container vertical-center">
+		<div class="col-sm-2">				
+			<div class="logoJK"><a href="/"><img class="svg svg-black" src="images/logoJK.svg" /></a></div>
+		</div>
+		<div class="col-sm-8">
+			<h4>Let's talk</h4>
+			<h2>Together</h2>
+		</div>
+		<div class="col-sm-2">
+			<p>&copy; <?php date_default_timezone_set('Europe/Paris'); echo date('Y'); ?> JK Groupe. All rights reserved.</p>
 		</div>
 	</section>
 </footer>	
 <!-- build:js js/app.min.js -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!-- 
-<script type="text/javascript" language="javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" ></script>
-<script type="text/javascript" language="javascript" src="http://jquery.lukelutman.com/plugins/pseudo/jquery.pseudo.js" ></script>
-<script type="text/javascript" language="javascript" src="js/modernizr/modernizr.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.mousewheel.min.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.touchSwipe.min.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.transit.min.js"></script>
-<script type="text/javascript" language="javascript" src="js/jquery.ba-throttle-debounce.min.js"></script> 
--->
-<script type="text/javascript" language="javascript" src="js/jtimer/jquery.timer.js"></script>
 <script src="//cdn.jsdelivr.net/velocity/1.2.1/velocity.min.js"></script>
 <script src="//cdn.jsdelivr.net/velocity/1.2.1/velocity.ui.min.js"></script>
-<!-- <script type="text/javascript" language="javascript" src="js/jquery.scrollwatch.min.js"></script> -->
 <script type="text/javascript" language="javascript" src="js/script.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- endbuild -->
